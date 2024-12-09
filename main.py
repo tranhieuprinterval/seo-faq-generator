@@ -34,7 +34,12 @@ def get_embeddings(text, api_key):
         chunks.append(text[i:i+chunk_size])
     embeddings = []
     for c in chunks:
-        emb = openai.Embedding.create(model="text-embedding-ada-002", input=c)["data"][0]["embedding"]
+        # Pass the text as a list to the input parameter
+        response = openai.Embedding.create(
+            model="text-embedding-ada-002",
+            input=[c]
+        )
+        emb = response["data"][0]["embedding"]
         embeddings.append((c, emb))
     return embeddings
 
