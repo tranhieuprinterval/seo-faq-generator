@@ -163,7 +163,7 @@ def format_all_faqs(faqs, user_faqs):
 # Streamlit App
 ############################################
 
-st.title("Google-Style Q&A Generator")
+st.title("SEO FAQ Generator Tool")
 
 st.write("""
 **How to Use This Tool:**
